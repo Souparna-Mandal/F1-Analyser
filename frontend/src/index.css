@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-f1-dark text-white;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .f1-gradient {
+    background: linear-gradient(135deg, #1A1A1A 0%, #2E2E2E 100%);
+  }
+  
+  .f1-card {
+    @apply bg-f1-gray/50 backdrop-blur-sm border border-white/10 rounded-lg;
+  }
+  
+  .f1-button {
+    @apply px-4 py-2 bg-f1-red hover:bg-red-600 text-white font-semibold rounded-lg transition-all duration-200;
+  }
+  
+  .f1-button-secondary {
+    @apply px-4 py-2 bg-f1-gray hover:bg-gray-600 text-white font-semibold rounded-lg transition-all duration-200 border border-white/20;
+  }
+  
+  .f1-input {
+    @apply bg-f1-gray/50 border border-white/20 rounded-lg px-3 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-f1-red;
+  }
+  
+  .f1-select {
+    @apply bg-f1-gray/50 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-f1-red;
+  }
+  
+  .telemetry-gauge {
+    @apply relative w-16 h-16 rounded-full border-4 border-f1-gray;
+  }
+  
+  .telemetry-gauge::before {
+    content: '';
+    @apply absolute inset-0 rounded-full border-4 border-transparent;
+    background: conic-gradient(from 0deg, var(--gauge-color, #f1-red) 0deg, var(--gauge-value, 0deg), transparent var(--gauge-value, 0deg));
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(220, 0, 0, 0.3);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(6, 0, 239, 0.3);
+  }
+  
+  .glow-green {
+    box-shadow: 0 0 20px rgba(0, 210, 190, 0.3);
+  }
+} 
